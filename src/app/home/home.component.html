@@ -1,0 +1,40 @@
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" ><b>VENDOR MANAGEMENT</b></a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a [routerLink]="['/home/vendorcontact']">Home</a></li>
+        
+
+        
+      </ul>
+      
+      <ul class="nav navbar-nav navbar-right">
+     
+      <button  (click)="logout()" class="btn btn-danger navbar-btn"><i class="fa fa-sign-out"></i>Logout</button>
+    </ul>
+    </div>
+  </nav>
+
+
+
+<!-- <nav class="navbar navbar-inverse ">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#"><span>VENDOR MANAGEMENT</span></a>
+      </div>
+      
+          <button (click)="home()" style="float:left" class="btn btn-default"><b>Home</b></button>
+       
+      <ul class="nav navbar-nav navbar-right">
+        
+        <li><button (click)="logout()" style="float:right" >Logout</button></li>
+      </ul>
+    </div>
+  </nav> -->
+
+  <router-outlet></router-outlet>

@@ -1,0 +1,53 @@
+<h4 align="center"><b> DETAILS</b></h4>
+
+<br>
+<br>
+
+
+
+<div *ngIf="vendor" align="center">
+    <h4><b>VENDOR DETAILS</b></h4>
+
+    <div>
+        <label><b>Vendor ID : </b></label><span>{{vendor.vId}}</span>
+    </div>
+    <div>
+        <label><b>Vendor Name : </b></label><span>{{vendor.vName}}</span>
+    </div>
+    <div>
+        <label><b>Vendor Address : </b></label><span>{{vendor.vAddress}}</span>
+    </div>
+
+    <div>
+        <label><b>Vendor Location : </b></label><span> {{vendor.vLocation}}</span>
+    </div>
+
+    <div>
+        <label><b>Vendor Service : </b></label><span>{{vendor.vService}}</span>
+    </div>
+    <div>
+        <label><b>pincode : </b></label><span>{{vendor.pincode}}</span>
+    </div>
+    <br>
+    <br>
+    <h4><b>CONTACT PERSON DETAILS</b></h4>
+    
+    <div>
+        <label><b>Name: </b></label> <span>{{vendor.cName}}</span>
+    </div>
+    <div>
+        <label><b>Department</b></label> <span>{{vendor.cDept}}</span>
+    </div>
+    <div>
+        <label><b>Email ID</b></label> <span>{{vendor.cEmail}}</span>
+    </div>
+    <div>
+        <label><b>Phone Number</b></label> <span>{{vendor.cPhone}}</span>
+    </div>
+
+
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Back to Vendor List</button>

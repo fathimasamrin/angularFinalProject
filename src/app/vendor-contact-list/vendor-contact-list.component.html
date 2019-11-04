@@ -1,0 +1,82 @@
+<!-- <div id="myOverlay" class="overlay">
+    <span class="closebtn" onclick="closeSearch()" title="Close Overlay">x</span>
+    <div class="overlay-content">
+      <form action="action_page.php">
+        <input type="text" placeholder="Search.." name="search">
+        <button type="submit"><i class="fa fa-search"></i></button>
+      </form>
+    </div>
+  </div> -->
+  
+  <div id="myOverlay" class="overlay" style="float:right">
+    
+    <div class="overlay-content" >
+     
+        <input type="text" placeholder="Search by name/place.." [(ngModel)]="searchString" (ngModelChange)="search(searchString)" aria-label="Search">
+        <!-- <button type="submit"><i class="fa fa-search"></i></button> -->
+        <button (click)="search(searchString)" class="btn-inverse">Search</button>
+     
+    </div>
+  </div>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- <div class="container input-group md-form form-sm form-1 pl-0" style="width:400px;">
+    <div class="input-group-prepend">
+        <span class="input-group-text cyan lighten-2" id="basic-text1"><i class="fa fa-search"
+                aria-hidden="true"></i></span>
+    </div>
+    <input class="form-control my-0 py-1" type="text" placeholder="Search by name/place"
+        [(ngModel)]="searchString" (ngModelChange)="search(searchString)" aria-label="Search">
+    <button (click)="search(searchString)" class="btn-info">Search</button>
+</div>  -->
+
+
+
+<div >
+    <button><a [routerLink]="['/home/insertvendor']" class="btn"><i class="fa fa-plus"></i> New Vendor</a></button>
+</div>
+
+
+<br>
+<br>
+
+
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+
+            <td><b>Vendor Name</b></td>
+            <td><b>Vendor Address</b></td>
+            <td><b>Vendor Location</b></td>
+            <td><b>Vendor Service</b></td>
+            <td><b>Vendor Pincode</b></td>
+            <td><b>Contact Name</b></td>
+            <td><b>Contact Department</b></td>
+            <td><b>Contact Email</b></td>
+            <td><b>Contact Phone</b></td>
+            <td colspan="3"><b>Actions</b></td>
+
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let vendor of vendors| async  | paginate: { itemsPerPage: 10, currentPage: p }; let i = index">
+            <td>{{vendor.vName}}</td>
+            <td>{{vendor.vAddress}}</td>
+            <td>{{vendor.vLocation}}</td>
+            <td>{{vendor.vService}}</td>
+            <td>{{vendor.pincode}}</td>
+            <td>{{vendor.cName}}</td>
+            <td>{{vendor.cDept}}</td>
+            <td>{{vendor.cEmail}}</td>
+            <td>{{vendor.cPhone}}</td>
+            <td><a [routerLink]="['/home/updatevendor', vendor.vId]" class="btn btn-primary"><i class="fa fa-edit"></i>Edit</a></td>
+            <td><button (click)="deleteVendor(vendor.vId,vendor)" class="btn"><i class="fa fa-ban"></i></button></td>
+            <!-- <td><a [routerLink]="['/home/vendorbyid', vendor.vId]" class="btn btn-primary">Details</a></td> -->
+        </tr>
+    </tbody>
+</table>
+<div align="center">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>
